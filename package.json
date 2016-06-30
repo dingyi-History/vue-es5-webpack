@@ -1,0 +1,22 @@
+{
+  "name": "vuees5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vue-resource": "^0.9.1",
+    "vuex": "^0.8.2",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "dependencies": {
+    "vue": "^1.0.26",
+    "vue-router": "^0.7.13",
+    "weui": "^0.4.2"
+  }
+}
