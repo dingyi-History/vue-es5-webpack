@@ -45,11 +45,16 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var Vue = __webpack_require__(1)
+	var a = __webpack_require__(3)
+	var b = __webpack_require__(4)
+	a.push(b)
 
 	new Vue({
 		el: "body",
 		data: {
-			message: "我是来自vue的消息"
+			message: "我是来自vue的消息",
+			list: a
+
 		}
 	})
 
@@ -10257,6 +10262,26 @@
 	};
 	process.umask = function() { return 0; };
 
+
+/***/ },
+/* 3 */
+/***/ function(module, exports) {
+
+	var a = [
+	  "1",
+	  "2",
+	  "3"
+	]
+
+	module.exports = a
+
+/***/ },
+/* 4 */
+/***/ function(module, exports) {
+
+	var b = "4"
+
+	module.exports = b
 
 /***/ }
 /******/ ]);
