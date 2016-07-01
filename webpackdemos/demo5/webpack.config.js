@@ -4,9 +4,9 @@ module.exports = {
 		app: ["./src/main.js"] // 入口文件
 	},
 	output: {
-		path: path.resolve(__dirname,"build"),  // 相当于不断的调用系统的cd命令 转为绝对路径
-		publicPath: "/assets/",
-		filename: "bundle.js"
+		path: path.resolve(__dirname,"dist"),  // 相当于不断的调用系统的cd命令 转为绝对路径
+		publicPath: "/dist/",
+		filename: "build.js"
  	},
  	module: {
       loaders: [

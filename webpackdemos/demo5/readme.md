@@ -1,7 +1,7 @@
 ## demo5 vue and webpack-dev-server
 
-* 目标1: 实现webpack-dev-server HMR 热加载
-* 目标2: 加入css-loader进行css模块加载
+* 目标1: 实现webpack-dev-server HMR 热加载 `√`
+* 目标2: 加入css-loader进行css模块加载 `√`
 
 ## 查阅资料
 
