@@ -1,0 +1,21 @@
+{
+  "name": "demo6",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack-dev-server --inline --hot"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^1.13.1",
+    "css-loader": "^0.23.1",
+    "style-loader": "^0.13.1",
+    "html-loader": "^0.4.3"
+  },
+  "dependencies": {
+  	"vue": "^1.0.26"
+  }
+}

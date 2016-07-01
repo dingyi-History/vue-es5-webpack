@@ -1,6 +1,4 @@
 var path = require('path') // 用于处理相对路径和绝对路径的转换 https://nodejs.org/docs/latest/api/path.html#path_path_resolve_path NodeJS中的Path对象，用于处理目录的对象，提高开发效率。 
-var ExtractTextPlugin = require("extract-text-webpack-plugin")
-
 module.exports = {
 	entry: {
 		app: ["./src/main.js"] // 入口文件
@@ -12,11 +10,8 @@ module.exports = {
  	},
  	module: {
       loaders: [
-        { test: /\.css$/, loader: ExtractTextPlugin.extract("style-loader", "css-loader") },
+        { test: /\.css$/, loaders: ['style', 'css'] }, // CSS 加载器
         { test: /\.html$/,loader: "html-loader" }
       ]
-    },
-    plugins: [
-        new ExtractTextPlugin("build.css")
-    ]
+    }
 }
