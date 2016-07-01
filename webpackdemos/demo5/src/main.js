@@ -1,6 +1,8 @@
 var Vue = require('vue')
 require('./css/list.css')
 
+var testComponent = require("./components/test/test")
+
 new Vue({
 	name: "mainjs",
 	el: '#app',
@@ -17,5 +19,8 @@ new Vue({
 		  "慢一些"
 		],
 		other: "然后另一个情况是,根HTML不进行热加载"
+	},
+	components: {
+		"test": testComponent
 	}
 })

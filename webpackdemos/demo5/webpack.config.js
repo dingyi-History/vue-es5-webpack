@@ -10,7 +10,8 @@ module.exports = {
  	},
  	module: {
       loaders: [
-        { test: /\.css$/, loaders: ['style', 'css'] } // CSS 加载器
+        { test: /\.css$/, loaders: ['style', 'css'] }, // CSS 加载器
+        { test: /\.html$/,loader: "html-loader" }
       ]
     }
 }
