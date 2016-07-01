@@ -10,6 +10,7 @@ module.exports = {
 		publicPath: "/dist/",
 		filename: "build.js"
  	},
+  // devtool: "source-map",
  	module: {
       loaders: [
         { test: /\.css$/, loader: ExtractTextPlugin.extract("style-loader", "css-loader") },
