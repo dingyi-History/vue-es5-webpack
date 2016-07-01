@@ -7,5 +7,10 @@ module.exports = {
 		path: path.resolve(__dirname,"build"),  // 相当于不断的调用系统的cd命令 转为绝对路径
 		publicPath: "/assets/",
 		filename: "bundle.js"
- 	}
+ 	},
+ 	module: {
+      loaders: [
+        { test: /\.css$/, loaders: ['style', 'css'] } // CSS 加载器
+      ]
+    }
 }

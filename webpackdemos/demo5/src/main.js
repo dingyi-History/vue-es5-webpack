@@ -1,4 +1,5 @@
 var Vue = require('vue')
+require('./css/list.css')
 
 new Vue({
 	name: "mainjs",
