@@ -14,7 +14,15 @@ module.exports = {
  	module: {
       loaders: [
         { test: /\.css$/, loader: ExtractTextPlugin.extract("style-loader", "css-loader") },
-        { test: /\.html$/,loader: "html-loader" }
+        { test: /\.html$/,loader: "html-loader" },
+        // 单独打包图片资源
+        {
+            test: /\.jpe?g|\.png|\.gif$/,
+            loader: "file-loader",
+            query: {
+                name: "images/[name].[ext]"
+            }
+        }
       ]
     },
     plugins: [

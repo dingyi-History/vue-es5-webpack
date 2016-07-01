@@ -10270,8 +10270,8 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var test = __webpack_require__(5)
-	var app_html = __webpack_require__(11)
-	__webpack_require__(12)
+	var app_html = __webpack_require__(12)
+	__webpack_require__(13)
 
 	module.exports = {
 		template: app_html,
@@ -10286,7 +10286,7 @@
 
 	var Vue = __webpack_require__(2)
 	var test_html = __webpack_require__(6)
-	__webpack_require__(7)
+	__webpack_require__(8)
 
 
 	var test = Vue.extend({
@@ -10315,27 +10315,33 @@
 
 /***/ },
 /* 6 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "<div>\n\t好，全放到组件中去了\n\t<h1 v-text=\"msg\"></h1>\n      <ul>\n        <li v-for=\"item in list\" v-text=\"item\"></li>\n      </ul>\n      <p v-text=\"other\"></p>\n\t<h2 v-text=\"testmsg\"></h2>\n</div>";
+	module.exports = "<div>\n\t好，全放到组件中去了\n\t<h1 v-text=\"msg\"></h1>\n      <ul>\n        <li v-for=\"item in list\" v-text=\"item\"></li>\n      </ul>\n      <p v-text=\"other\"></p>\n\t<h2 v-text=\"testmsg\"></h2>\n\t<img src=\"" + __webpack_require__(7) + "\" alt=\"\">\n</div>";
 
 /***/ },
 /* 7 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "images/01.png";
+
+/***/ },
+/* 8 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 8 */,
 /* 9 */,
 /* 10 */,
-/* 11 */
+/* 11 */,
+/* 12 */
 /***/ function(module, exports) {
 
 	module.exports = "<div id=\"app\">\n    <h1 class=\"item1\">app 是根组件</h1>\n\t<test></test>\n</div>";
 
 /***/ },
-/* 12 */
+/* 13 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
