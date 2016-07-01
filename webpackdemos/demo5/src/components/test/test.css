@@ -1,3 +1,7 @@
-{
-	h2: blue;
+h2{
+	color: blue;
+}
+
+ul {
+	color: #e66;
 }
