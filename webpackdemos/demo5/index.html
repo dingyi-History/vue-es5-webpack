@@ -5,9 +5,13 @@
     <title></title>
   </head>
   <body>
-    <app>
+    <div id="app">
       <h1 v-text="msg"></h1>
-    </app>
-    <script src="dist/app.build.js"></script>
+      <ul>
+        <li v-for="item in list" v-text="item"></li>
+      </ul>
+      <p v-text="other"></p>
+    </div>
+  <script src="assets/bundle.js"></script>
   </body>
 </html>
