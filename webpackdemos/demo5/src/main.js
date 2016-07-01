@@ -1,11 +1,8 @@
 var Vue = require('vue')
 
-var testComponent = require("./components/test/test")
-
 new Vue({
-	el: 'app',
+	el: 'body',
 	components: {
-		"test": testComponent
+		"app": require('./App/app')
 	},
-	template: '<test></test>'
 })
