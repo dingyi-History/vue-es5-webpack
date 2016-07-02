@@ -1,0 +1,15 @@
+.list {
+	list-style: none;
+	border: 1px solid #eee;
+	padding: 0;
+}
+
+.list .item{
+	height: 100px; 
+}
+
+.list .item:hover {
+	background: #e66;
+	color: #FFF;
+}
+  
