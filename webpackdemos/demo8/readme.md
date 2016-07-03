@@ -38,3 +38,36 @@
 - webpack.config.js             // webpack配置文件      
 + webpack.config/               // webpack配置目录 (待考虑)              
 ```
+
+* 还有种看似不错，就是在require()的时候层级比较多的
+
+```
++ webpack.config/
+- webpack.config.js
++ src/
+  + html/
+    - app.html  // 根组件 html
+    - commoncomponent1.html // 通用的组件 html
+    + view1
+      - index.html
+      - component1.html
+      - component2.html
+  + js/
+    - app.js    // 根组件 JS
+    - commoncomponent1.js // 通用的组件 js
+    + view1/
+      - index.js
+      - component1.js
+      - component2.js
+  + css/
+    - app.css  // 根组件 样式
+    + view1/
+      - index.css
+      - component1.css
+      - component2.css
+  + base/
+    + utils/
+    + directive/    
+  - main.js
+  - router.js
+```
