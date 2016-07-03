@@ -10,6 +10,7 @@
 * 为了实现css单独打包处理 ，添加了 `extract-text-webpack-plugin`
 * 为了实现路由添加了 `vue-router`
 * 为了实现根据路由按需加载，通过使用webpack split code 功能，将路由转为异步加载 `lazy load`
+* 为了实现图片的打包加载，添加了`url-loader`
 
 ### 一些待考虑的词汇
 
