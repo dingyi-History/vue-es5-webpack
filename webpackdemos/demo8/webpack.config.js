@@ -5,10 +5,5 @@ module.exports = {
 		filename: 'build.js',
 		publicPath: '/dist/'
 	},
-	module: {
-		loaders: [
-			{ test: /\.html$/,loader: 'html-loader' },
-			{ test: /\.css$/,loaders: ['style','css'] }
-		]
-	}
+	module: require('./webpack.module.js')
 }

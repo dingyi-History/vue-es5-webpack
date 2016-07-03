@@ -1,5 +1,7 @@
-module.exports = {
+ module.exports = {
 	template: require('./app.html'),
 	components: {
+		view1htmlcssjs: require('../view1/js'),
+		htmlcssjsview1: require('../js/view1')
 	}
 }

@@ -4,7 +4,7 @@
   "description": "* 😛 目标1 - 把demo6那套再整理下,把css单独抽在外面进行开发",
   "main": "webpack.config.js",
   "scripts": {
-    "dev": "webpack-dev-server --hot",
+    "dev": "webpack-dev-server --inline --hot",
     "build": "webpack"
   },
   "author": "",
