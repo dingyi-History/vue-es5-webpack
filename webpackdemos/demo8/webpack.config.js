@@ -5,5 +5,5 @@ module.exports = {
 		filename: 'build.js',
 		publicPath: '/dist/'
 	},
-	module: require('./webpack.module.js')
+	module: require('./webpack.config/module.js')
 }
