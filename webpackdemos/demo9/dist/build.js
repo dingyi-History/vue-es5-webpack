@@ -1,6 +1,34 @@
 /******/ (function(modules) { // webpackBootstrap
+/******/ 	// install a JSONP callback for chunk loading
+/******/ 	var parentJsonpFunction = window["webpackJsonp"];
+/******/ 	window["webpackJsonp"] = function webpackJsonpCallback(chunkIds, moreModules) {
+/******/ 		// add "moreModules" to the modules object,
+/******/ 		// then flag all "chunkIds" as loaded and fire callback
+/******/ 		var moduleId, chunkId, i = 0, callbacks = [];
+/******/ 		for(;i < chunkIds.length; i++) {
+/******/ 			chunkId = chunkIds[i];
+/******/ 			if(installedChunks[chunkId])
+/******/ 				callbacks.push.apply(callbacks, installedChunks[chunkId]);
+/******/ 			installedChunks[chunkId] = 0;
+/******/ 		}
+/******/ 		for(moduleId in moreModules) {
+/******/ 			modules[moduleId] = moreModules[moduleId];
+/******/ 		}
+/******/ 		if(parentJsonpFunction) parentJsonpFunction(chunkIds, moreModules);
+/******/ 		while(callbacks.length)
+/******/ 			callbacks.shift().call(null, __webpack_require__);
+
+/******/ 	};
+
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
+
+/******/ 	// object to store loaded and loading chunks
+/******/ 	// "0" means "already loaded"
+/******/ 	// Array means "loading", array contains callbacks
+/******/ 	var installedChunks = {
+/******/ 		0:0
+/******/ 	};
 
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
@@ -26,6 +54,29 @@
 /******/ 		return module.exports;
 /******/ 	}
 
+/******/ 	// This file contains only the entry chunk.
+/******/ 	// The chunk loading function for additional chunks
+/******/ 	__webpack_require__.e = function requireEnsure(chunkId, callback) {
+/******/ 		// "0" is the signal for "already loaded"
+/******/ 		if(installedChunks[chunkId] === 0)
+/******/ 			return callback.call(null, __webpack_require__);
+
+/******/ 		// an array means "currently loading".
+/******/ 		if(installedChunks[chunkId] !== undefined) {
+/******/ 			installedChunks[chunkId].push(callback);
+/******/ 		} else {
+/******/ 			// start chunk loading
+/******/ 			installedChunks[chunkId] = [callback];
+/******/ 			var head = document.getElementsByTagName('head')[0];
+/******/ 			var script = document.createElement('script');
+/******/ 			script.type = 'text/javascript';
+/******/ 			script.charset = 'utf-8';
+/******/ 			script.async = true;
+
+/******/ 			script.src = __webpack_require__.p + "" + chunkId + ".build.js";
+/******/ 			head.appendChild(script);
+/******/ 		}
+/******/ 	};
 
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = modules;
@@ -46,19 +97,20 @@
 
 	var Vue = __webpack_require__(1)
 	var VueRouter = __webpack_require__(3)
-	Vue.use(VueRouter)
-	var router = new VueRouter()
 	var app = __webpack_require__(4)
-	__webpack_require__(11)
+	var routerConfig = __webpack_require__(11)
+	Vue.use(VueRouter)
+	__webpack_require__(14)
 
-	router.map({
-	    '/': {
-	        component: __webpack_require__(24)
-	    },
-	    '/v2': {
-	        component: __webpack_require__(25)
-	    }
+	let router = new VueRouter({
+	  hashbang: true,
+	  history: false,
+	  saveScrollPosition: true,
+	  transitionOnLoad: true
 	})
+
+	// 独立出来的路由配置
+	routerConfig(router)
 
 	router.start(app,'app')
 
@@ -13042,71 +13094,78 @@
 /* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
+	module.exports = function(router) {
+		router.map({
+			'/': {
+		      name: "view1",
+		      component: function (resolve) {
+	    			__webpack_require__.e/* require */(1, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(12)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this))
+	    		}
+		    },
+		    '/v2': {
+		    	name: "view2",
+		    	component: function (resolve) {
+	    			__webpack_require__.e/* require */(2, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(13)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this))
+	    		}
+		    }
+		})
+		router.redirect({
+	    '*': '/'
+	    })
+	}
+
+/***/ },
+/* 12 */,
+/* 13 */,
+/* 14 */
+/***/ function(module, exports, __webpack_require__) {
+
 	// 注册所有的样式文件
-	__webpack_require__(12)
+	__webpack_require__(15)
 
 	// 页面1样式
-	__webpack_require__(16)
-	__webpack_require__(18)
+	__webpack_require__(19)
+	__webpack_require__(21)
 
 	//  页面2 样式
-	__webpack_require__(20)
-	__webpack_require__(22)
+	__webpack_require__(23)
+	__webpack_require__(25)
 
 /***/ },
-/* 12 */
+/* 15 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 13 */,
-/* 14 */,
-/* 15 */,
-/* 16 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
+/* 16 */,
 /* 17 */,
-/* 18 */
+/* 18 */,
+/* 19 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 19 */,
-/* 20 */
+/* 20 */,
+/* 21 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 21 */,
-/* 22 */
+/* 22 */,
+/* 23 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 23 */,
-/* 24 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var html = __webpack_require__(5)
-	module.exports = {
-		template:html.view1.index
-	}
-
-/***/ },
+/* 24 */,
 /* 25 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	var html = __webpack_require__(5)
-	module.exports = {
-		template:html.view2.index
-	}
+	// removed by extract-text-webpack-plugin
 
 /***/ }
 /******/ ]);
