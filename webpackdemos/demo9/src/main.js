@@ -2,8 +2,9 @@ var Vue = require('vue')
 var VueRouter = require('vue-router')
 var app = require('./js/app.js')
 var routerConfig = require('./router.js')
-Vue.use(VueRouter)
 require('./css')
+
+Vue.use(VueRouter)
 
 let router = new VueRouter({
   hashbang: true,

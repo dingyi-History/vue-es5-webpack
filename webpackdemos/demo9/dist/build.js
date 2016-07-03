@@ -98,9 +98,10 @@
 	var Vue = __webpack_require__(1)
 	var VueRouter = __webpack_require__(3)
 	var app = __webpack_require__(4)
-	var routerConfig = __webpack_require__(11)
+	var routerConfig = __webpack_require__(12)
+	__webpack_require__(15)
+
 	Vue.use(VueRouter)
-	__webpack_require__(14)
 
 	let router = new VueRouter({
 	  hashbang: true,
@@ -13052,11 +13053,11 @@
 		app: __webpack_require__(6),
 		view1: {
 			index: __webpack_require__(7),
-			list: __webpack_require__(8)
+			list: __webpack_require__(9)
 		},
 		view2: {
-			index: __webpack_require__(9),
-			list: __webpack_require__(10)
+			index: __webpack_require__(10),
+			list: __webpack_require__(11)
 		}
 	}
 
@@ -13068,30 +13069,36 @@
 
 /***/ },
 /* 7 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "<h1>view1</h1>\n<a href=\"javascript;\" v-link=\"{ path: '/v2' }\">GO TO VIEW2</a>";
+	module.exports = "<h1>view1</h1>\n<img src=\"" + __webpack_require__(8) + "\" alt=\"\">\n<a href=\"javascript;\" v-link=\"{ path: '/v2' }\">GO TO VIEW2</a>";
 
 /***/ },
 /* 8 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "";
+	module.exports = __webpack_require__.p + "images/1.png";
 
 /***/ },
 /* 9 */
 /***/ function(module, exports) {
 
-	module.exports = "<h2>view2</h2>\n<a href=\"javascript;\" v-link=\"{ path: '/' }\">GO TO VIEW1</a>";
+	module.exports = "";
 
 /***/ },
 /* 10 */
 /***/ function(module, exports) {
 
-	module.exports = "";
+	module.exports = "<h2>view2</h2>\n<a href=\"javascript;\" v-link=\"{ path: '/' }\">GO TO VIEW1</a>";
 
 /***/ },
 /* 11 */
+/***/ function(module, exports) {
+
+	module.exports = "";
+
+/***/ },
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(router) {
@@ -13099,13 +13106,13 @@
 			'/': {
 		      name: "view1",
 		      component: function (resolve) {
-	    			__webpack_require__.e/* require */(1, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(12)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this))
+	    			__webpack_require__.e/* require */(1, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(13)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this))
 	    		}
 		    },
 		    '/v2': {
 		    	name: "view2",
 		    	component: function (resolve) {
-	    			__webpack_require__.e/* require */(2, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(13)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this))
+	    			__webpack_require__.e/* require */(2, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(14)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this))
 	    		}
 		    }
 		})
@@ -13115,54 +13122,54 @@
 	}
 
 /***/ },
-/* 12 */,
 /* 13 */,
-/* 14 */
+/* 14 */,
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 注册所有的样式文件
-	__webpack_require__(15)
+	__webpack_require__(16)
 
 	// 页面1样式
-	__webpack_require__(19)
-	__webpack_require__(21)
+	__webpack_require__(20)
+	__webpack_require__(22)
 
 	//  页面2 样式
-	__webpack_require__(23)
-	__webpack_require__(25)
+	__webpack_require__(24)
+	__webpack_require__(26)
 
 /***/ },
-/* 15 */
+/* 16 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 16 */,
 /* 17 */,
 /* 18 */,
-/* 19 */
+/* 19 */,
+/* 20 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 20 */,
-/* 21 */
+/* 21 */,
+/* 22 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 22 */,
-/* 23 */
+/* 23 */,
+/* 24 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 24 */,
-/* 25 */
+/* 25 */,
+/* 26 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin

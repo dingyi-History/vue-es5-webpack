@@ -13,6 +13,7 @@
 
 ### 一些待考虑的词汇
 
+* 图片等资源的打包
 * 压缩
 * 混淆
 * hash命名
@@ -21,4 +22,8 @@
 * weui
 * iscroll
 * touch 
+* vuex
+* 单元测试
+* 野狗、leancloud、微信
+* 阿里云、Node、CDN、Nginx、PM2
 * ...
